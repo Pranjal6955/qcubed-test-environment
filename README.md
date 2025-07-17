@@ -25,6 +25,7 @@ This directory contains a test environment for CVE-2020-24914 (QCubed PHP Object
 
 3. The vulnerable application will be available at:
    - URL: http://localhost:8081
+   - Deployed : https://qcubed-test-environment.onrender.com
 - Profile endpoint: http://localhost:8081/profile.php
 
 ### Manual Docker Build
