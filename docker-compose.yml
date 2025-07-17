@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  qcubed-vulnerable:
+    build: .
+    ports:
+      - "8081:80"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    volumes:
+      - ./profile.php:/var/www/html/profile.php
+    restart: unless-stopped
+
+  # Optional: Add MySQL if needed for full QCubed functionality
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: qcubed123
+      MYSQL_DATABASE: qcubed
+      MYSQL_USER: qcubed
+      MYSQL_PASSWORD: qcubed123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data: 
