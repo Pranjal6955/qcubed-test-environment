@@ -26,7 +26,7 @@ if ($_POST["data"]) {
     echo "<p>No POST data received. Send a POST request with 'data' parameter to test the vulnerability.</p>";
     echo "<p>Example:</p>";
     echo "<pre>";
-    echo "curl -X POST http://localhost:8080/profile.php \\\n";
+    echo "curl -X POST http://localhost:8081/profile.php \\\n";
     echo "  -H \"Content-Type: application/x-www-form-urlencoded\" \\\n";
     echo "  -d \"data=O:8:\\\"stdClass\\\":1:{s:4:\\\"test\\\";s:10:\\\"test123456\\\";}&action=save&id=1\"";
     echo "</pre>";

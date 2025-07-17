@@ -24,8 +24,8 @@ This directory contains a test environment for CVE-2020-24914 (QCubed PHP Object
    ```
 
 3. The vulnerable application will be available at:
-   - URL: http://localhost:8080
-   - Profile endpoint: http://localhost:8080/profile.php
+   - URL: http://localhost:8081
+- Profile endpoint: http://localhost:8081/profile.php
 
 ### Manual Docker Build
 
@@ -45,7 +45,7 @@ This directory contains a test environment for CVE-2020-24914 (QCubed PHP Object
 
 1. Send a POST request to the profile.php endpoint:
    ```bash
-   curl -X POST http://localhost:8080/profile.php \
+   curl -X POST http://localhost:8081/profile.php \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "data=O:8:\"stdClass\":1:{s:4:\"test\";s:10:\"test123456\";}&action=save&id=1"
    ```
@@ -62,12 +62,12 @@ This directory contains a test environment for CVE-2020-24914 (QCubed PHP Object
 
 1. Run the Nuclei template against the test environment:
    ```bash
-   nuclei -u http://localhost:8080 -t qcubed-php-object-injection.yaml -v
+   nuclei -u http://localhost:8081 -t qcubed-php-object-injection.yaml -v
    ```
 
 2. For debugging, use the debug flag:
    ```bash
-   nuclei -u http://localhost:8080 -t qcubed-php-object-injection.yaml -debug
+   nuclei -u http://localhost:8081 -t qcubed-php-object-injection.yaml -debug
    ```
 
 ## Vulnerability Explanation
